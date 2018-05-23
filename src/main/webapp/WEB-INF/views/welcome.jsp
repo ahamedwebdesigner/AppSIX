@@ -30,7 +30,7 @@
 <body>
     
 
-<h1>Hellow all form jsp</h1>
+<h1>Hellow all form ${message}</h1>
 
 
 
