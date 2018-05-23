@@ -6,6 +6,8 @@
 <head>
       <title>${title}</title>
     
+    <!-- let's add statuc resource  using c:url -->
+    
     <c:url var="faviconUrl" value="/resources/img/favicon.ico"/>
     <link rel="icon" type="image/x-icon" href="${faviconUrl}"/>
     
@@ -30,7 +32,7 @@
 <body>
     
 
-<h1>Hellow all form ${greeting}</h1>
+<h1>${greeting}</h1>
 
 
 

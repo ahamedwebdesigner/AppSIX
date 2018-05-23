@@ -1,21 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
       <title>${title}</title>
     
-    <c:url var="faviconUrl" value="/resources/img/favicon.ico"/>
+       
+<!-- let's add static resources css,js,img using srping:url -->
+<spring:url value="/resources/img/favicon.ico" var="faviconUrl" />
+<spring:url value="/resources/css/bootstrap.min.css" var="bootstrapUrl" />
+<spring:url value="/resources/css/bootstrap-theme.min.css" var="bootstrapResponsiveUrl" />
+<spring:url value="/resources/css/global.css" var="globalCss" />
+
     <link rel="icon" type="image/x-icon" href="${faviconUrl}"/>
-    
-    <c:url var="bootstrapUrl" value="/resources/css/bootstrap.min.css"/>
     <link href="${bootstrapUrl}" rel="stylesheet"></link>
-    
-    <c:url var="bootstrapResponsiveUrl" value="/resources/css/bootstrap-theme.min.css"/>
     <link href="${bootstrapResponsiveUrl}" rel="stylesheet"></link>
-    
-    <c:url var="globalCss" value="/resources/css/global.css"/>
     <link href="${globalCss}" rel="stylesheet"></link>
 
      
@@ -30,20 +31,15 @@
 <body>
     
 
-<h1>Hellow all form ${message}</h1>
+<h1>${message}</h1>
 
 
+<spring:url value="/resources/js/jquery.min.js" var="JqueryJs" />
+<spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJsUrl" />
+<spring:url value="/resources/js/global.js" var="global" />
 
-
-
-
-    <c:url var="JqueryJs" value="/resources/js/jquery.min.js"/>
-    <script src="${JqueryJs}"></script>
-    
-     <c:url var="bootstrapJsUrl" value="/resources/js/bootstrap.min.js"/>
-     <script src="${bootstrapJsUrl}"></script>
-     
-     <c:url var="global" value="/resources/js/global.js"/>
-     <script src="${global}"></script>
+  <script src="${JqueryJs}"></script>
+  <script src="${bootstrapJsUrl}"></script>
+  <script src="${global}"></script>
 </body>
 </html>
