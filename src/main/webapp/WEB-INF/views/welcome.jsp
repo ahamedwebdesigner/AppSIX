@@ -31,7 +31,7 @@
 <body>
     
 
-<h1>${message}</h1>
+<h1>${greeting}</h1>
 
 
 <spring:url value="/resources/js/jquery.min.js" var="JqueryJs" />
