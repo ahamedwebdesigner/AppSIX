@@ -45,7 +45,7 @@
 			<h1>${message}</h1>
 
 
-<spring:url value="/country/add" var="formsubmit" />
+			<spring:url value="/country/add" var="formsubmit" />
 			<form:form method="post" modelAttribute="country"
 				action="${formsubmit}">
 				<table>

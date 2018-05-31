@@ -51,8 +51,26 @@
 				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
 			</props>
 		</property>
-		<property name="packagesToScan" value="com.ssn.appsix.entity"></property>
+	<!-- 	<property name="packagesToScan" value="com.ssn.appsix.entity"></property> -->
+		
+		<property name="packagesToScan">
+		    <list>
+		        <value>com.ssn.appsix.entity</value>
+		    </list>
+		</property>
+		
+		
+		
 	</bean>
+	
+	
+		<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
 	
 	
 </beans>
