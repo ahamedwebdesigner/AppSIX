@@ -32,4 +32,18 @@ public class CountryService {
 	  return countryDao.getCountry(id);
 	}
 
+	
+	
+	 public void updateCountry(Country country) {
+	  countryDao.updateCountry(country);
+	 
+	 }
+
+
+	public void deleteCountry(int id) {
+		countryDao.deleteCountry(id);
+		
+	}
+	
+	
 }

@@ -37,6 +37,23 @@ public class CountryDAO {
 		  Country country = (Country) session.load(Country.class, new Integer(id));
 		  return country;
 		}
+	@Transactional
+	public void updateCountry(Country country) {
+		Session session = this.sessionFactory.getCurrentSession();
+		  session.update(country);
+		
+	}
+
+	@Transactional
+	public void deleteCountry(int id) {
+		 Session session = this.sessionFactory.getCurrentSession();
+		  Country p = (Country) session.load(Country.class, new Integer(id));
+		  if (null != p) {
+		   session.delete(p);
+		  }
+		 } 
+		
+	
 	
 	
 		 

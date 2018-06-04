@@ -60,10 +60,9 @@ public class Employee {
 		this.insertTime = insertTime;
 	}
 
-	@Override
-	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", role=" + role + ", insertTime=" + insertTime + "]";
-	}
+
+
+
 	
 	
 }

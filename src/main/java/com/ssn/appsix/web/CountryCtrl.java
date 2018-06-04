@@ -23,7 +23,7 @@ public class CountryCtrl {
 	CountryService countryService;
 	
 	   @RequestMapping(
-			   			value = "country/", 
+			   			value = "country", 
 			   			method = RequestMethod.GET)
 	public String DisplayAllCountries(Model model) {
 		   
@@ -49,10 +49,10 @@ public class CountryCtrl {
 	   			method = RequestMethod.POST)
 	
 		public String saveCountry(@ModelAttribute("country") Country country ,ModelMap model) {
-		  if(country.getId()==0) {
+		   if(country.getId()==0) {
 		   countryService.addCountry(country);
 		   }else{
-		  // countryService.updateCountry(country);
+		    countryService.updateCountry(country);
 		   }
 	
 		  return "redirect:/country/";
@@ -61,16 +61,24 @@ public class CountryCtrl {
 	   
 	 
 	   @RequestMapping(value = "/country/update/{id}", method = RequestMethod.GET)
-	   public String updateCountry( @ModelAttribute("country") Country country ,@PathVariable("id") int id,Model model) {
-		   
-		   country = this.countryService.getCountry(id);
-		   System.out.println("===========================");
-		   System.out.println(id);
-		   System.out.println("===========================");
+	   public String updateCountry(@PathVariable("id") int id,Model model) {
+	
+		  
+		   model.addAttribute("country", this.countryService.getCountry(id));
+		
 	 
 	      return "countryForm";
 	   }
 	    
+	   
+	   
+	   @RequestMapping(value = "country/delete/{id}", method = RequestMethod.GET, headers = "Accept=application/json")
+		public String deleteCountry(@PathVariable("id") int id) {
+			countryService.deleteCountry(id);
+			 return "redirect:/country/";
+	 
+		}	
+	   
 	   
 	   }
 

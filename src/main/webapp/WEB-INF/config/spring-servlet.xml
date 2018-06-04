@@ -14,13 +14,13 @@
   <mvc:default-servlet-handler />
   <mvc:resources mapping="/resources/**" location="/resources/" />
  
- 
+
  <mvc:interceptors>
      <bean class="com.ssn.appsix.web.AppInfoInterceptor" /> 
 	<!--  <bean class="com.ssn.appsix.web.InterceptorEG" /> -->
 </mvc:interceptors>
  
- 
+
  
  <bean class = "org.springframework.web.servlet.view.InternalResourceViewResolver">
       <property name = "prefix" value = "/WEB-INF/views/" />
