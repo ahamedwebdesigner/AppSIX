@@ -1,0 +1,14 @@
+System.setProperty("https.protocols", "TLSv1,TLSv1.1,TLSv1.2");
+System.setProperty("https.protocols", "TLSv1.1");
+
+You can upgrade your Java 7 version to 1.7.0_131-b31
+
+
+
+You can also update the java.security file located in JRE_HOME/lib/security/java.security: directory.
+
+Update jdk.tls.disabledAlgorithms property and add TLSv1, TLSv1.1 to reject lower security protocol versions.
+
+
+Add following option for java application:
+-Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2  
